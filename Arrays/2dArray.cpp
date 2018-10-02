@@ -2,7 +2,6 @@
 
 using namespace std;
 
-// Complete the hourglassSum function below.
 int hourglassSum(vector<vector<int>> arr)
 {
     int sum = 0;
@@ -16,12 +15,15 @@ int hourglassSum(vector<vector<int>> arr)
     
     for(int k = 0; k < 16; k++)
     {
+        //Sum of top line & middle piece of figure
         int topmidsum = arr[hold0][i] + arr[hold0][i+1] + arr[hold0][i+2] + arr[hold1][i+1]; 
         cout << "adding: " << arr[hold0][i] << " + " << arr[hold0][i+1] << " + " << arr[hold0][i+2] << " + " << arr[hold1][i+1] << endl;
             
+        //Sum of bottom line of figure
         int botsum = arr[hold2][j-2] + arr[hold2][j-1] + arr[hold2][j];
         cout << "adding: " << arr[hold2][j-2] << " + " << arr[hold2][j-1] << " + " << arr[hold2][j] << endl; 
         
+        //Add both sums
         int totalsum = topmidsum + botsum;
         cout <<"Total Sum: " << totalsum << endl;
         cout <<"Max Sum: " << maxsum << endl;
