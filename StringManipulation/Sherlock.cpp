@@ -7,9 +7,10 @@ using namespace std;
 // Complete the isValid function below.
 string isValid(string s) {
 
-    //If one zero, thats ok
-    //Multiple zeros = BAD!! >:(
-    
+    //Returns "YES" if all characters of a string appear the same number of times 
+    //It is also valid if you remove just  character at  index in the string, and the remaining characters will occur the same number of times.
+    //Else return "NO"
+
     int freqAlphabet[52] = {0};
     for(int i = 0; i < s.size()-1; i++)
         {
