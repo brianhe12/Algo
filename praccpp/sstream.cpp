@@ -6,6 +6,8 @@ using namespace std;
 vector<int> parseInts(string str) {
     vector<int> result;
     
+
+    //Reads a stream of csv, stores values into 'result' and skips commas ex: 23,14,23
 	stringstream ss(str);
     int a;
     char comma;
