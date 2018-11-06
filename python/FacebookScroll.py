@@ -1,42 +1,29 @@
 import webbrowser as wb 
 
 #input "See Older Messages"
-input = ""
+inputString = input("Enter facebook messages URL (ex. https://mobile.facebook.com/messages/read/?tid=cid.c.10000151...): ")
+print("\n")
 
 #Lengths of each index
 index1 = len("last_message_timestamp=")	#23
 index2 = len("&pagination_direction")	#21
+inputlen = len(inputString)
 
-Field1 = (input.find("last_message_timestamp=")) #87
-Field2 = (input.find("&pagination_direction")) #123
+Field1 = (inputString.find("last_message_timestamp=")) #87
+Field2 = (inputString.find("&pagination_direction")) #123
+Field1 = Field1 + index1 #110
 
+newString = int(inputString[Field1:-(inputlen - Field2)])
 
-#88 - 122 is the number we want to change
-#Put string 88 - 122 inside a string
-TimeStamp = Field1 + index1 #1541525543163
+#Time Traveling!!
+months = input("Please enter the number of months you want to scroll back: ")
+TimeTravel = (((2.628 * 10**9) * float(months)))
 
-newInput = ""
-i = 0
-while(input[TimeStamp] != "&"):
-	newInput[i] = input[TimeStamp]
-	i += 1
-	TimeStamp += 1
+#String casting
+FinalString = str(newString - TimeTravel)
+newString = str(newString)
 
-print(newInput)
+inputString = inputString.replace(newString,FinalString)
 
+wb.open(inputString, new = 2)
 
-#newInput = ""
-#i = 0
-#while(index1 != "&"):
-#	newInput[i] = index1
-#	index1+= 1
-#	i += 1
-
-#print(newInput)
-
-#input = input.replace("1541525543163","22222222")
-#print (input)
-#while(i != Field1)
-
-
-#wb.open(input, new = 2)
