@@ -16,7 +16,7 @@ Field1 = Field1 + index1 #110
 newString = int(inputString[Field1:-(inputlen - Field2)])
 
 #Time Traveling!!
-months = input("Please enter the number of months you want to scroll back: ")
+months = input("Please enter the number of months you want to scroll back (Will show an error if the months entered is further than your first sent message): ")
 TimeTravel = (((2.628 * 10**9) * float(months)))
 
 #String casting
